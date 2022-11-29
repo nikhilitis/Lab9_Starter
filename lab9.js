@@ -64,11 +64,14 @@ for (let i=0; i<errorBtns.length; i++){
             throw Error("An error has occurred");
         }
     });
-
 }
 
 // STEP 5
+//if (window.onerror) {
+//    console.log("This is where error is trigured")
+//}
+
 window.onerror = function(errorMsg, url, lineNumber){
-    console.log(errorMsg);
+    console.log("window.onerror message: " + errorMsg);
     TrackJS.track('Testing TrackJS!');
 }
